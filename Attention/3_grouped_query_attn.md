@@ -10,7 +10,7 @@ GQA 是 MQA 和 MHA 之间的折中方案，将 h 个头分成 g 组，每组共
     - 将 h 个头分成 g 组，每组生成一组 $K_j = X × W_j^K$ 和 $V_j = X × W_j^V$（j = 1, ..., g）。
     - 每组内的头共享相同的 $K_j$ 和 $V_j$。
 2. 计算注意力：每个头 i 使用所属组的 $K_j$ 和 $V_j$，计算 $head_i = Attention(Q_i, K_j, V_j)$。
-3. 拼接和投影：$Output = Concat(head_1, ..., head_h) × W^O$，输出维度为 $n × d_{model}$。
+3. 拼接和投影: $Output = Concat(head_1, ..., head_h) × W^O$, 输出维度为 $n × d_{model}$。
 
 ### 数学公式（纯文本描述）
 - $GroupedQuery(Q, K, V) = Concat(head_1, ..., head_h) × W^O$。

@@ -12,7 +12,7 @@ MQA 是 Multi-Head Attention 的优化变体，所有头共享 K 和 V，但 Q �
     - $K = X × W^K，V = X × W^V$（所有头共享）。
     - $d_k = d_v = d_{model} / h$。
 2. 计算注意力：每个头 i 计算 $head_i = Attention(Q_i, K, V)$。
-3. 拼接和投影：$Output = Concat(head_1, ..., head_h) × W^O$，输出维度为 $n × d_{model}$。
+3. 拼接和投影: $Output = Concat(head_1, ..., head_h) × W^O$, 输出维度为 $n × d_{model}$。
 
 ### 数学公式（纯文本描述）
 - $MultiQuery(Q, K, V) = Concat(head_1, ..., head_h) × W^O$。
@@ -54,7 +54,7 @@ class MultiQueryAttention(nn.Module):
 ```
 
 ### 与 MHA 的对比
-- MHA：每个头有独立的 $Q_i$、$K_i$、$V_i$。
+- MHA：每个头有独立的 $Q_i$, $K_i$, $V_i$。
 -  MQA：仅 $Q_i$ 独立，K 和 V 共享。
 - 优势：内存占用降低 h 倍，适合推理阶段。
 - 局限：表达能力不如 MHA。

@@ -7,7 +7,7 @@ Multi-Head Attention 是 Transformer 模型的核心，通过并行计算多个�
 假设输入 X 的维度为 $n × d_{model}$：
 
 1. **线性变换生成 Q、K、V**：
-    - $Q = X × W^Q$，$K = X × W^K$，$V = X × W^V$，其中 $W^Q$、$W^K$、$W^V$ 是可学习权重矩阵。
+    - $Q = X × W^Q$, $K = X × W^K$, $V = X × W^V$，其中 $W^Q$, $W^K$, $W^V$ 是可学习权重矩阵。
     - 通常 $d_k = d_v = d_{model} / h$（h 为头数）。
 2. **分割成多头**：将 Q、K、V 分成 h 个子矩阵，每个头的维度为 $n × (d_k/h)$。
 3. **计算注意力**：对每个头 i，计算 $head_i = Attention(Q_i, K_i, V_i)$。
