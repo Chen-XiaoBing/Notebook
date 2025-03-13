@@ -3,3 +3,6 @@
 - [ Multi-Head Attention（GHA，多头注意力](./1_multi_head_attn.md)
 - [Multi-Query Attention（MQA，多查询注意力](./2_multi_query_attn.md)
 - [Grouped-Query Attention (GQA，分组查询注意力)](./3_grouped_query_attn.md)
+
+参考：  
+- [缓存与效果的极限拉扯：从MHA、MQA、GQA到MLA](https://spaces.ac.cn/archives/10091)
